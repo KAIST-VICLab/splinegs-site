@@ -32,8 +32,8 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <div class="title is-2 publication-title"><h1 style="display: inline; clear:none;">SplineGS: Robust Motion-Adaptive Spline for Real-Time Dynamic 3D Gaussians from Monocular Video</h1></div>
-
+          <!-- <div class="title is-2 publication-title"><h1 style="display: inline; clear:none;">SplineGS: Robust Motion-Adaptive Spline for Real-Time Dynamic 3D Gaussians from Monocular Video</h1></div> -->
+          <div class="title is-1 publication-title"><img src="./static/image/icon.png" width="75", height="75"><h1 style="display: inline; clear:none;">SplineGS:</h1> <h1 style="display: inline; clear:none;">obust Motion-Adaptive Spline for Real-Time Dynamic 3D Gaussians from Monocular Video</h1></div>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a target="_blank" rel="noopener noreferrer" href="https://www.viclab.kaist.ac.kr/">Jongmin Park</a><sup>* 1</sup>&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -56,7 +56,7 @@
             <!-- <span class="author-block"><sup>†</sup>Corresponding author</span> -->
           </div>
           <div class="is-size-5 publication-authors">
-            <span class="author-block"> <sup>†</sup>Co-corresponding author</span>
+            <span class="author-block"> <sup>†</sup>Co-corresponding authors</span>
             <!-- <span class="author-block"><sup>†</sup>Corresponding author</span> -->
           </div>
           <div class="is-size-5 publication-authors">
@@ -102,11 +102,9 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Synthesizing novel views from in-the-wild monocular videos is challenging due to scene dynamics and the lack of multi-view cues.
-            To address this, we propose SplineGS, a COLMAP-free dynamic 3D Gaussian Splatting (3DGS) framework for high-quality reconstruction and fast rendering from monocular videos. At its core is a novel Motion-Adaptive Spline (MAS) method, which represents continuous dynamic 3D Gaussian trajectories using cubic Hermite splines with a small number of control points.
-          </p>
-          <p>
-            For MAS, we introduce a Motion-Adaptive Control points Pruning (MACP) method to model the deformation of each dynamic 3D Gaussian across varying motions, progressively pruning control points while maintaining dynamic modeling integrity. Additionally, we present a joint optimization strategy for camera parameter estimation and 3D Gaussian attributes, leveraging photometric and geometric consistency. This eliminates the need for Structure-from-Motion preprocessing and enhances SplineGS’s robustness in real-world conditions. Experiments show that SplineGS significantly outperforms state-of-the-art methods in novel view synthesis quality for dynamic scenes from monocular videos, achieving thousands times faster rendering speed.
+            TL;DR:
+            We propose SplineGS, a COLMAP-free dynamic 3D Gaussian Splatting (3DGS) framework for high-quality reconstruction and fast rendering from monocular videos. At its core is a novel Motion-Adaptive Spline (MAS) method, which represents continuous dynamic 3D Gaussian trajectories using cubic Hermite splines.
+            Experiments show that SplineGS significantly outperforms state-of-the-art methods in novel view synthesis quality for dynamic scenes from monocular videos, achieving thousands times faster rendering speed.
           </p>
         </div>
       </div>
@@ -134,7 +132,7 @@
 <section class="section">
   <div class="container is-widescreen">
     <h2 class="title is-3 no-bottom">Novel View Synthesis on NVIDIA</h2>
-    <h2 class="title is-4" style="display: inline; font-weight: normal;">We follow the experimental settings of RoDynRF [<font color="blue">27</font>]. Each monocular training sequence consists of 12 frames of resolution 270x480.</h2>
+    <div class="content has-text-justified">We follow the experimental settings of RoDynRF [<font color="blue">27</font>]. Each monocular training sequence consists of 12 frames of resolution 270x480.</div>
     <div class="video-container" align="center" style="margin-bottom: 30px; margin-top: 30px;">
         <video id="nvidia_input" loop playsinline muted controls autoplay style="height: 150px;">
           <source src="./static/video/nvidia/skating_input.mp4" type="video/mp4">
@@ -170,8 +168,8 @@
 <section class="section">
   <div class="container is-widescreen">
     <h2 class="title is-3 no-bottom">Novel View and Time Synthesis on NVIDIA <span style="font-weight: normal;">(more challenging)</span></h2>
-    <h2 class="title is-4" style="display: inline; font-weight: normal;">As discussed in Section <font color="red">5.1</font> in the main paper, we propose to evaluate the rendering for unseen timesteps during training. We follow the dataset sampling strategy in [<font color="blue">22</font>], which samples 24 timestamps from the NVIDIA dataset. In addition, to simulate a larger motion, we exclude frames with odd time indices in the training sets.
-      To ensure all test timestamps are not seen during training, and thus, to create a more <i>challenging</i> novel view and time synthesis validation, we exclude frames with even time indices in the test sets. Each training frame has the resolution 288x540.</h2>
+    <div class="content has-text-justified">As discussed in Section <font color="red">5.1</font> in the main paper, we propose to evaluate the rendering for unseen timesteps during training. We follow the dataset sampling strategy in [<font color="blue">22</font>], which samples 24 timestamps from the NVIDIA dataset. In addition, to simulate a larger motion, we exclude frames with odd time indices in the training sets.
+      To ensure all test timestamps are not seen during training, and thus, to create a more <i>challenging</i> novel view and time synthesis validation, we exclude frames with even time indices in the test sets. Each training frame has the resolution 288x540.</div>
     <div class="video-container" align="center" style="margin-bottom: 30px; margin-top: 30px;">
         <video id="nvidia_low_input" loop playsinline muted controls autoplay style="height: 150px;">
           <source src="./static/video/nvidia_low/input_Balloon2.mp4" type="video/mp4">
@@ -204,8 +202,8 @@
 <section class="section">
   <div class="container is-widescreen">
     <h2 class="title is-3 no-bottom">COLMAP-free NVS Comparisons with RoDynRF on DAVIS</h2>
-    <h2 class="title is-4" style="display: inline; font-weight: normal;">We compare our SplineGS with the <i>COLMAP-free</i> novel view synthesis method RoDynRF [<font color="blue">27</font>]. Each monocular sequence consists of 40-90 frames of resolution 480x854. We provide the fixed-view-varying-time and spiral-zoom renderings and evaluate the quality by blindly image quality assessment via MUSIQ* score (<font color="red">the higher the better</font>).</h2>
-    <h2 class="is-size-5 publication-authors" style="display: block; font-weight: normal;"><i>*MUSIQ: Multi-scale Image Quality Transformer. In ICCV, 2021.</i></h2>
+    <div class="content has-text-justified">We compare our SplineGS with the <i>COLMAP-free</i> novel view synthesis method RoDynRF [<font color="blue">27</font>]. Each monocular sequence consists of 40-90 frames of resolution 480x854. We provide the fixed-view-varying-time and spiral-zoom renderings and evaluate the quality by blindly image quality assessment via MUSIQ* score (<font color="red">the higher the better</font>).</div>
+    <div class="content has-text-justified"><i>*MUSIQ: Multi-scale Image Quality Transformer. In ICCV, 2021.</i></div>
     <div class="video-container" align="center"  style="margin-bottom: 30px;">
       <a onclick="togglePlay()">
         <video class="video" id="viz_input" loop muted src="./static/video/davis/fixed_our_rodynrf_lucia.mp4" onloadeddata="initVideo()"></video>
@@ -254,7 +252,7 @@
 <section class="section">
   <div class="container is-widescreen">
     <h2 class="title is-3 no-bottom">Dynamic 3D Gaussian Trajectory Visualization on DAVIS</h2>
-    <h2 class="title is-4" style="display: inline; font-weight: normal;">We visualize the rasterized 2D trajectories of the dynamic 3D Gaussians of SplineGS on DAVIS dataset. The 3D trajectories are projected to a fixed 2D novel view.</h2>
+    <div class="content has-text-justified">We visualize the rasterized 2D trajectories of the dynamic 3D Gaussians of SplineGS on DAVIS dataset. The 3D trajectories are projected to a fixed 2D novel view.</div>
     <div class="video-container" align="center" style="margin-bottom: 30px; margin-top: 30px;">
         <video id="davis_track" loop playsinline muted controls autoplay style="width: 1000px;">
           <source src="./static/video/davis/track_train.mp4" type="video/mp4">
@@ -286,7 +284,7 @@
 <section class="section">
   <div class="container is-widescreen">
     <h2 class="title is-3 no-bottom">Toy Example of Dynamic 3D Gaussian Trajectory Editing</h2>
-    <h2 class="title is-4" style="display: inline; font-weight: normal;">We visualize a toy example for editing effects when we modify a few control points. The spline-based representation potentially offers a simple motion trajectory manipulation while preserving smooth motion along temporal axis, which can be explored in future works.</h2>
+    <div class="content has-text-justified">We visualize a toy example for editing effects when we modify a few control points. The spline-based representation potentially offers a simple motion trajectory manipulation while preserving smooth motion along temporal axis, which can be explored in future works.</div>
     <div class="video-container" align="center" style="margin-bottom: 30px; margin-top: 30px;">
         <video id="davis_track" loop playsinline muted controls autoplay>
           <source src="./static/video/davis/edit_horsejump-low.mp4" type="video/mp4">
