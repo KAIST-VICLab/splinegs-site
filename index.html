@@ -95,6 +95,56 @@
 </section>
 
 <section class="section">
+  <div class="container is-widescreen">
+    <h2 class="title is-3 no-bottom">COLMAP-free NVS Comparisons with RoDynRF on DAVIS</h2>
+    <div class="content has-text-justified">We compare our SplineGS with the <i>COLMAP-free</i> novel view synthesis method RoDynRF [<font color="blue">27</font>]. Each monocular sequence consists of 40-90 frames of resolution 480x854. We provide the fixed-view-varying-time and spiral-zoom renderings and evaluate the quality by blindly image quality assessment via MUSIQ* score (<font color="red">the higher the better</font>).</div>
+    <div class="content has-text-justified"><i>*MUSIQ: Multi-scale Image Quality Transformer. In ICCV, 2021.</i></div>
+    <div class="video-container" align="center"  style="margin-bottom: 30px;">
+      <a onclick="togglePlay()">
+        <video class="video" id="viz_input" loop muted src="./static/video/davis/fixed_our_rodynrf_breakdance-flare.mp4" onloadeddata="initVideo()"></video>
+        <canvas height=0 class="videoMerge" id="viz_inputMerge"></canvas>
+      </a>
+      <h2 class="title is-4" style="display: inline;">Fixed-view-varying-time. </h2> <h2 class="title is-4" style="display: inline; font-weight: normal;"><font>RoDynRF (left) vs. Ours (right).</font></h2>
+    </div>
+
+    <!-- <div class="video-container" align="center"  style="margin-bottom: 30px;">
+      <a onclick="togglePlay_rodynrf_spiral()">
+        <video class="video" id="viz_input_rodynrf_spiral" loop muted src="./static/video/davis/spiral_our_rodynrf_breakdance-flare.mp4" onloadeddata="initVideo_rodynrf_spiral()"></video>
+        <canvas height=0 class="videoMerge" id="viz_input_rodynrf_spiralMerge"></canvas>
+      </a>
+      <h2 class="title is-4" style="display: inline;">Spiral-zoom. </h2> <h2 class="title is-4" style="display: inline; font-weight: normal;"><font>RoDynRF (left) vs. Ours (right).</font></h2>
+    </div> -->
+
+    <div class="video-select" align="center">
+      <a class="video-item" onclick="changeVideo_davis('./static/video/davis/fixed_our_rodynrf_breakdance-flare.mp4', './static/video/davis/spiral_our_rodynrf_breakdance-flare.mp4', 'breakdance-flare')">
+        <button class="button-19 button-19-selected" role="button" id="btn_davis_breakdance-flare" >Breakdance-flare</button>
+      </a>
+      <a class="video-item" onclick="changeVideo_davis('./static/video/davis/fixed_our_rodynrf_lucia.mp4', './static/video/davis/spiral_our_rodynrf_lucia.mp4', 'lucia')">
+        <button class="button-19 " role="button" id="btn_davis_lucia" >Lucia</button>
+      </a>
+      <a class="video-item" onclick="changeVideo_davis('./static/video/davis/fixed_our_rodynrf_horsejump-low.mp4', './static/video/davis/spiral_our_rodynrf_horsejump-low.mp4', 'horsejump-low')">
+        <button class="button-19" role="button" id="btn_davis_horsejump-low" >Horsejump-low</button>
+      </a>
+      <a class="video-item" onclick="changeVideo_davis('./static/video/davis/fixed_our_rodynrf_train.mp4', './static/video/davis/spiral_our_rodynrf_train.mp4', 'train')">
+        <button class="button-19" role="button" id="btn_davis_train" >Train</button>
+      </a>
+      <a class="video-item" onclick="changeVideo_davis('./static/video/davis/fixed_our_rodynrf_horsejump-high.mp4', './static/video/davis/spiral_our_rodynrf_horsejump-high.mp4', 'horsejump-high')">
+        <button class="button-19" role="button" id="btn_davis_horsejump-high" >Horsejump-high</button>
+      </a>
+      <a class="video-item" onclick="changeVideo_davis('./static/video/davis/fixed_our_rodynrf_bus.mp4', './static/video/davis/spiral_our_rodynrf_bus.mp4', 'bus')">
+        <button class="button-19" role="button" id="btn_davis_bus" >Bus</button>
+      </a>
+      <a class="video-item" onclick="changeVideo_davis('./static/video/davis/fixed_our_rodynrf_paragliding.mp4', './static/video/davis/spiral_our_rodynrf_paragliding.mp4', 'paragliding')">
+        <button class="button-19" role="button" id="btn_davis_paragliding" >Paragliding</button>
+      </a>
+      <a class="video-item" onclick="changeVideo_davis('./static/video/davis/fixed_our_rodynrf_paragliding-launch.mp4', './static/video/davis/spiral_our_rodynrf_paragliding-launch.mp4', 'paragliding-launch')">
+        <button class="button-19" role="button" id="btn_davis_paragliding-launch" >Paragliding-launch</button>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -199,55 +249,7 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container is-widescreen">
-    <h2 class="title is-3 no-bottom">COLMAP-free NVS Comparisons with RoDynRF on DAVIS</h2>
-    <div class="content has-text-justified">We compare our SplineGS with the <i>COLMAP-free</i> novel view synthesis method RoDynRF [<font color="blue">27</font>]. Each monocular sequence consists of 40-90 frames of resolution 480x854. We provide the fixed-view-varying-time and spiral-zoom renderings and evaluate the quality by blindly image quality assessment via MUSIQ* score (<font color="red">the higher the better</font>).</div>
-    <div class="content has-text-justified"><i>*MUSIQ: Multi-scale Image Quality Transformer. In ICCV, 2021.</i></div>
-    <div class="video-container" align="center"  style="margin-bottom: 30px;">
-      <a onclick="togglePlay()">
-        <video class="video" id="viz_input" loop muted src="./static/video/davis/fixed_our_rodynrf_lucia.mp4" onloadeddata="initVideo()"></video>
-        <canvas height=0 class="videoMerge" id="viz_inputMerge"></canvas>
-      </a>
-      <h2 class="title is-4" style="display: inline;">Fixed-view-varying-time. </h2> <h2 class="title is-4" style="display: inline; font-weight: normal;"><font>RoDynRF (left) vs. Ours (right).</font></h2>
-    </div>
 
-    <div class="video-container" align="center"  style="margin-bottom: 30px;">
-      <a onclick="togglePlay_rodynrf_spiral()">
-        <video class="video" id="viz_input_rodynrf_spiral" loop muted src="./static/video/davis/spiral_our_rodynrf_lucia.mp4" onloadeddata="initVideo_rodynrf_spiral()"></video>
-        <canvas height=0 class="videoMerge" id="viz_input_rodynrf_spiralMerge"></canvas>
-      </a>
-      <h2 class="title is-4" style="display: inline;">Spiral-zoom. </h2> <h2 class="title is-4" style="display: inline; font-weight: normal;"><font>RoDynRF (left) vs. Ours (right).</font></h2>
-    </div>
-
-    <div class="video-select" align="center">
-      <a class="video-item" onclick="changeVideo_davis('./static/video/davis/fixed_our_rodynrf_lucia.mp4', './static/video/davis/spiral_our_rodynrf_lucia.mp4', 'lucia')">
-        <button class="button-19 button-19-selected" role="button" id="btn_davis_lucia" >Lucia</button>
-      </a>
-      <a class="video-item" onclick="changeVideo_davis('./static/video/davis/fixed_our_rodynrf_horsejump-low.mp4', './static/video/davis/spiral_our_rodynrf_horsejump-low.mp4', 'horsejump-low')">
-        <button class="button-19" role="button" id="btn_davis_horsejump-low" >Horsejump-low</button>
-      </a>
-      <a class="video-item" onclick="changeVideo_davis('./static/video/davis/fixed_our_rodynrf_train.mp4', './static/video/davis/spiral_our_rodynrf_train.mp4', 'train')">
-        <button class="button-19" role="button" id="btn_davis_train" >Train</button>
-      </a>
-      <a class="video-item" onclick="changeVideo_davis('./static/video/davis/fixed_our_rodynrf_horsejump-high.mp4', './static/video/davis/spiral_our_rodynrf_horsejump-high.mp4', 'horsejump-high')">
-        <button class="button-19" role="button" id="btn_davis_horsejump-high" >Horsejump-high</button>
-      </a>
-      <a class="video-item" onclick="changeVideo_davis('./static/video/davis/fixed_our_rodynrf_breakdance-flare.mp4', './static/video/davis/spiral_our_rodynrf_breakdance-flare.mp4', 'breakdance-flare')">
-        <button class="button-19" role="button" id="btn_davis_breakdance-flare" >Breakdance-flare</button>
-      </a>
-      <a class="video-item" onclick="changeVideo_davis('./static/video/davis/fixed_our_rodynrf_bus.mp4', './static/video/davis/spiral_our_rodynrf_bus.mp4', 'bus')">
-        <button class="button-19" role="button" id="btn_davis_bus" >Bus</button>
-      </a>
-      <a class="video-item" onclick="changeVideo_davis('./static/video/davis/fixed_our_rodynrf_paragliding.mp4', './static/video/davis/spiral_our_rodynrf_paragliding.mp4', 'paragliding')">
-        <button class="button-19" role="button" id="btn_davis_paragliding" >Paragliding</button>
-      </a>
-      <a class="video-item" onclick="changeVideo_davis('./static/video/davis/fixed_our_rodynrf_paragliding-launch.mp4', './static/video/davis/spiral_our_rodynrf_paragliding-launch.mp4', 'paragliding-launch')">
-        <button class="button-19" role="button" id="btn_davis_paragliding-launch" >Paragliding-launch</button>
-      </a>
-    </div>
-  </div>
-</section>
 
 <section class="section">
   <div class="container is-widescreen">
